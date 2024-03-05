@@ -1,0 +1,62 @@
+{
+  "name": "run-vcpkg-action",
+  "version": "10.0.0",
+  "description": "GitHub action for running vcpkg.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lukka/run-vcpkg-action"
+  },
+  "author": "Luca Cappa (https://github.com/lukka)",
+  "license": "MIT",
+  "scripts": {
+    "pack": "gulp && ncc build build/src/action.js -o dist && ncc build build/src/post-action.js -o dist/post",
+    "clean": "rm -rf ./build",
+    "build": "gulp build",
+    "lint": "gulp eslint",
+    "test": "npm run pack && gulp test"
+  },
+  "devDependencies": {
+    "@types/node": "^16.0.0",
+    "@typescript-eslint/eslint-plugin": "^4.29.2",
+    "@typescript-eslint/parser": "^4.29.2",
+    "@vercel/ncc": "^0.26.1",
+    "eslint": "^7.32.0",
+    "eslint-plugin-jest": "24.4.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "gulp": "^4.0.2",
+    "gulp-eslint": "^6.0.0",
+    "gulp-install": "^1.1.0",
+    "gulp-jest-acierto": "^4.0.3",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-typescript": "^5.0.0",
+    "jest": "^26.0.14",
+    "jest-circus": "^26.4.2",
+    "minimist": ">=1.2.6",
+    "ts-jest": "^26.3.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.1.3",
+    "yargs-parser": ">=13.1.2"
+  },
+  "dependencies": {
+    "@actions/cache": "^3.0.4",
+    "@actions/core": "^1.10.0",
+    "@actions/exec": "^1.1.1",
+    "@actions/github": "^5.0.3",
+    "@actions/io": "^1.1.2",
+    "@lukka/action-lib": "2.0.13",
+    "@lukka/assets-lib": "2.0.13",
+    "@lukka/base-lib": "2.0.13",
+    "@lukka/base-util-lib": "2.0.13",
+    "@lukka/run-vcpkg-lib": "2.0.13",
+    "@types/adm-zip": "^0.4.32",
+    "@types/follow-redirects": "^1.14.1",
+    "@types/jest": "^26.0.14",
+    "adm-zip": "^0.4.13",
+    "follow-redirects": "^1.15.1",
+    "ini": ">=1.3.6",
+    "jest-cli": "^26.4.2",
+    "lodash.template": ">=4.5.0",
+    "node-notifier": ">=8.0.1",
+    "strip-json-comments": "^3.0.1"
+  }
+}
